@@ -1,0 +1,37 @@
+extends  ./../layouts/user.pug
+
+block content
+    //- h1.text-center.text-uppercase  Filmy:
+    //- if movies
+    //-     each movie in movies
+    //-         .card(style="margin-bottom: 10px")
+    //-             .card-body
+    //-                 h5.card-title Movie: #{movie.title}
+    //-                 a(href="film/" + movie._id,  class="btn btn-primary btn-sm" ) Details
+    //- else 
+    //-     h1 There are no movies
+
+    body.u-home-bg-color
+        include ../includes/nav.pug
+        header.header
+            .header__text-box
+                h1.heading-primary
+                    span.heading-primary--main Witaj
+                    span.heading-primary--sub Tylko u nas najlepsze filmy w internetach
+                a.btn.btn--primary.btn--animated.u-font-btn-big(href='/registration') Zarejestruj sie 
+        main
+            section.section-movies.u-margin-bottom-medium
+                div
+                    h2.heading-secondary.u-margin-bottom-small Filmy
+                .container
+                    if movies
+                        each movie in movies
+                            .col-1-of-5
+                                .card
+                                    a(href="film/" + movie._id)
+                                        img.card__img(src=movie.imageURL, alt='')
+                                    .card__content
+                                        h3.card__content-title  #{movie.title}
+                                        h4.card__content-price  #{movie.sale_price} zl 
+        footer.footer
+            p  © Sebastian P

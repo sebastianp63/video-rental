@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title=title
+        link(rel="stylesheet" href="/stylesheets/style.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous")
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    
+    body
+        include ../includes/navbar.pug
+        div(class='container-fluid')
+            div(class='row')
+                div(class='col-sm-2' style="min-width: 200px;")
+                    ul(class='sidebar-nav' style=" margin-top: 20px;  padding: 0;list-style: none;")
+                        li 
+                            a(href='#' class="btn btn-outline-dark w-100 mb-3" ) Home
+                        li 
+                            a(href="/api/admin/genres" class="btn btn-outline-dark w-100 mb-3" ) All genres
+                        li 
+                            a(href='/api/admin/movies' class="btn btn-outline-dark w-100 mb-3") All movies
+                        li 
+                            a(href='' class="btn btn-outline-dark w-100 mb-3") All rental
+                        li 
+                            a(href='' class="btn btn-outline-dark w-100 mb-3") All users
+                        li 
+                            hr
+                        li 
+                            a(href='/api/admin/genre/create' class="btn btn-outline-dark w-100 mb-3") Create new genre
+                        li 
+                            a(href='/api/admin/movie/create' class="btn btn-outline-dark w-100 mb-3") Create new Movie
+                div(class='col-sm-6')
+                    block content

@@ -1,0 +1,131 @@
+.video__details {
+
+    height: 100vh;
+    background-image: url(https://images.wallpaperscraft.com/image/star_wars_the_force_awakens_main_characters_105940_1920x1080.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.video__detail-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 0 4rem;
+    position: absolute;
+    top: 20%;
+
+    left: 50%;
+    transform: translateX(-50%);
+    @include clearfix;
+
+
+}
+
+.img__wrapper {
+    position: relative;
+    left: 0;
+    width: 23%;
+    padding: 0 2rem 4rem 0;
+    float: left;
+    display: none;
+
+    .video__cover {
+        width: 100%;
+
+    }
+
+    @media (min-width: 1024px) {
+        display: block;
+
+
+    }
+}
+
+.text {
+
+    &__container {
+        width: 100%;
+        float: right;
+
+        padding: 0 4rem;
+
+        @media (min-width: 1024px) {
+            float: left;
+            width: 50%;
+
+
+        }
+
+    }
+
+    &__box {
+        padding-bottom: 1.6rem;
+        color: $color-white;
+        letter-spacing: 0.07rem;
+
+        font-size: 1.4rem;
+
+        @media (min-width: 640px) {
+            font-size: 1.6rem;
+
+
+        }
+
+        &-title {
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            font-weight: 700;
+
+            @media (min-width: 640px) {
+                font-size: 3rem;
+
+
+            }
+        }
+
+        &-genre {
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        &-name {
+            font-weight: bold;
+        }
+
+        &-language {
+            text-transform: uppercase;
+        }
+
+    }
+
+
+
+
+}
+
+
+.purchase__container {
+    float: left;
+
+    padding: 4rem 0 0 4rem;
+    width: 100%;
+
+
+    @media (min-width: 1024px) {
+        width: 40%;
+
+
+    }
+
+    @media (min-width: 1024px) {
+        width: 27%;
+
+
+    }
+}
+
+.purchase__button {
+    width: 100%;
+
+}

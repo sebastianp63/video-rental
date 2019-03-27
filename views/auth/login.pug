@@ -1,0 +1,25 @@
+extends  ./../layouts/user.pug
+
+block content
+    body
+        include ../includes/nav.pug
+        if errorMessage.length
+            .error-box.error-box__message #{errorMessage}
+        .middle-column.col-sm-4
+                h1.heading-primary--black.u-align-center  Zaloguj się
+                hr.form-divider
+                .u-margin-bottom-small.u-align-center Zaloguj sie przez Twojego emaila
+                form(action="/login" method="POST" novalidate)
+                    .form-group
+                        input.form-control(name="email", type='email', required="true", aria-describedby='emailHelp', placeholder='Email', value=oldData.email)
+                        if (errors && errors.email)
+                            small.error-message #{errors.email.msg}
+                    .form-group
+                        input.form-control(name="password", required="true", type='password', placeholder='Haslo')
+                        if (errors && errors.password)
+                            small.error-message #{errors.password.msg}
+                        small.u-margin-bottom-small.form-small Minimum 6 znaków
+                    button.btn-submit.btn--primary.u-margin-bottom-small(type='submit') Zaloguj się
+                    hr.form-divider
+                    .u-margin-bottom-small.u-align-center Nie jestes jeszcze zarejestrowany?
+                    a.btn.btn--primary.u-width-100.u-margin-bottom-small(href='/registration') Zarejestruj się

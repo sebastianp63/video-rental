@@ -1,0 +1,17 @@
+.cart__message {
+    position: absolute;
+    top: calc(#{$navbar-height} + 1rem);
+    right: 5rem;
+    background-color: $color-white;
+    border: 0.2rem solid $color-black;
+    border-radius: 0.5rem;
+    box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+
+
+    &-text {
+        padding: 2rem 4rem;
+        color: black;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+}

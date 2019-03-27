@@ -1,0 +1,20 @@
+extends ./../layouts/admin.pug
+
+block content
+    h1 Movie: #{movie.title}
+
+    .card(style="margin-bottom: 10px" )
+        .card-body
+            p Genre: 
+                each genre in movie.genres
+                    | #{genre.name}, 
+            p Relase year: #{movie.relase_year}
+            p Description: #{movie.description}
+            p Duration time: #{movie.duration_time} min
+            p Language: #{movie.language}
+            p Sale price: #{movie.sale_price}
+
+    a(href=movie.url + "/update" class="btn btn-primary btn-sm float-left mr-2") Update
+    a(href=movie.url + "/delete" class="btn btn-primary btn-sm btn-sm") Delete
+ 
+

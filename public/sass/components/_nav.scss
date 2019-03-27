@@ -1,0 +1,54 @@
+.navigation {
+    @include clearfix;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $navbar-height;
+    padding: $navbar-padding 0;
+    background-color: rgba(1, 1, 1, 0.7);
+    z-index: 10;
+
+    &-user {
+        line-height: $navbar-height;
+        float: left;
+        color: white;
+        margin-right: 20px;
+
+    }
+
+    &__menu {
+        @include clearfix;
+        margin: 0;
+        float: right;
+        list-style: none;
+
+        &-item {
+            cursor: pointer;
+            display: block;
+            float: right;
+
+            &:hover .navigation-btn {
+                color: #000;
+                background-color: #fff;
+                cursor: inherit;
+            }
+        }
+    }
+
+    &-btn {
+        display: block;
+        text-align: center;
+        margin-right: 0.3rem;
+        border: 0.2rem solid white;
+        height: calc(#{$navbar-height} - (2 * #{$navbar-padding}));
+        line-height: calc(#{$navbar-height} - (2 * #{$navbar-padding}));
+        padding: 0 2rem;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: transparent;
+        transition: all .3s;
+
+    }
+}

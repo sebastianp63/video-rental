@@ -1,0 +1,55 @@
+extends  ./../layouts/user.pug
+
+
+//- block content
+//-     body
+//-         h1(style="margin-top: 80px") Movie: #{movie.title}
+
+//-         .card(style="margin-bottom: 10px" )
+//-             .card-body
+//-                 p Genre: 
+//-                     each genre in movie.genres
+//-                         | #{genre.name}, 
+//-                 p Relase year: #{movie.relase_year}
+//-                 p Description: #{movie.description}
+//-                 p Duration time: #{movie.duration_time} min
+//-                 p Language: #{movie.language}
+//-                 p Sale price: #{movie.sale_price}
+
+//-         a(href="/add-to-cart/" + movie._id, class="btn btn-primary btn-sm float-left mr-2" id="addToCart") Dodaj do koszyka 
+//-         a(href="" class="btn btn-primary btn-sm btn-sm") Wypozycz
+     
+//-      script
+
+block content 
+    body 
+        include ../includes/nav.pug
+        if cartMessage
+            .cart__message
+                .cart__message-text #{cartMessage}
+        section.video__details
+            .video__detail-container
+                .img__wrapper
+                    img.video__cover(src=movie.imageURL, alt='')
+                .text__container
+                    .text__box
+                        .text__box-title #{movie.title}
+                    .text__box
+                        each genre in movie.genres
+                            span.text__box-genre #{genre.name}, 
+                    .text__box
+                        span.text__box-name Rok wydania: 
+                        span.text__box-content #{movie.relase_year}
+                    .text__box
+                        span.text__box-name Czas trwania: 
+                        span.text__box-content #{movie.duration_time} min
+                    .text__box
+                        span.text__box-name Jezyk:
+                        span.text__box-language #{movie.language}
+                    .text__box
+                        span.text__box-name Description:
+                        span.text__box-content #{movie.description}
+                .purchase__container
+                    a.btn-submit.btn--primary.purchase__button.u-font-btn-big(href="/add-to-cart/" + movie._id)
+                        .purchase__button-text Dodaj do koszyka 
+                        .purchase__button-prcie #{movie.sale_price}

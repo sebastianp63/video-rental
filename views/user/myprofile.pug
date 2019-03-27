@@ -1,0 +1,22 @@
+extends  ./../layouts/user.pug
+
+block content
+    body
+        include ../includes/nav.pug
+        section.cart-content
+            .u-align-center.u-margin-top-big
+                h2.heading-primary--black.u-margin-bottom-medium Moje zamowienia
+            each rental in rentals
+                .order__content
+                    .order
+                        each item in rental.items
+                            .order__item
+                                .order__item-image
+                                    img.order__image(src=item.item.imageURL, alt='')
+                                .cart__item-content
+                                    .cart__item-title #{item.item.title}
+                                    .cart__item-price #{item.item.sale_price} zl
+                                    .cart__item-price Data wypozyczenia: #{rental.dateRental}
+
+                        .cart__item-content
+                            .cart__item-price Suma kosztow zamowienia: #{rental.cart.totalPrice} zl

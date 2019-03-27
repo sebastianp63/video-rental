@@ -1,0 +1,37 @@
+extends  ./../layouts/user.pug
+
+block content
+    body
+        include ../includes/nav.pug
+        section.cart-section
+        .u-align-center.u-margin-top-big
+            if !products.length
+                h1.heading-primary--black Koszyk
+                h2.heading-secondary--black.u-margin-bottom-medium Koszyk jest pusty przejdz do katalogu 
+                <a href="/" class="btn btn--primary  u-margin-top-medium">Strona glowna </a>
+            else 
+                h1.heading-primary--black.u-margin-bottom-medium Koszyk
+
+        if products.length
+            .cart-content
+                .row
+                    .col-1-of-2
+                        .cart
+                             each product in products 
+                                .cart__item
+                                    .cart__item-image
+                                        img.cart__image(src=product.item.imageURL, alt='')
+                                    .cart__item-content
+                                        .cart__item-title #{product.item.title}
+                                        .cart__item-price #{product.item.sale_price} zl
+                                        a.cart__item-delete(href="/remove-cart-item/" + product.item._id)
+                                            i(class="fas fa-dumpster cart__item-delete-icon")  
+                                            |    Usun element 
+                    .col-1-of-2
+                        .cart-box
+                            .cart-info
+                                .cart-total
+                                    .cart-total-label Suma:
+                                    .cart-total-price #{totalPrice} zl
+                            // <a href="#" class="btn btn--primary  u-margin-top-medium">Przejdz do kasy </a>
+                        a.btn-submit.btn--primary.u-margin-top-medium(href="/rentalCreate")  Przejdz do kasy

@@ -1,0 +1,107 @@
+.cart-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart {
+
+    &__icon {
+        position: relative;
+        font-size: 2.5rem;
+
+    }
+
+
+    &__quantity {
+        background-color: $color-btn-primary;
+        color: $color-white;
+        height: 1.7rem;
+        width: 1.7rem;
+        border-radius: 10rem;
+        padding: 0.2rem;
+        position: absolute;
+        bottom: -20%;
+        right: -30%;
+        font-size: 1.3rem;
+
+
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__item {
+        @include clearfix;
+        border-bottom: 0.2rem solid $color-gray-light-1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 3rem;
+
+        &-image {
+            float: left;
+            width: 20%;
+        }
+
+
+        &-content {
+            float: left;
+            padding: 0 3rem 0;
+            height: 100%;
+            width: 80%;
+        }
+
+        &-title {
+            color: $color_black;
+            font-size: 1.8rem;
+            padding-bottom: 1rem;
+
+            font-weight: 400;
+        }
+
+        &-price {
+            color: $color_black;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        &-delete {
+            padding-top: 2rem;
+            color: $color-gray-dark;
+            font-size: 1.5rem;
+
+            &-icon {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+
+
+    &-info {
+        border-top: 0.3rem solid $color-black;
+        padding-top: 2rem;
+        margin: 0 5rem;
+    }
+
+    &-total {
+        position: relative;
+        height: 5rem;
+        color: $color-black;
+        font-size: 4.2rem;
+        font-weight: 700;
+
+        &-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        &-price {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+        }
+    }
+}

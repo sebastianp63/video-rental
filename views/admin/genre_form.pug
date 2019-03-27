@@ -1,0 +1,10 @@
+extends ./../layouts/admin.pug
+
+block content
+    h1 #{title}
+    form(action="" method="POST")
+        .form-group
+            label(for="name") Genre
+            input(type="text" id="name" name="name" required="true"
+            class="form-control" placeholder="Action Sc-fi etc." value=genre ? genre.name:'')
+        button(type="submit" class="btn btn-primary") Submit

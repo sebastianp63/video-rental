@@ -1,0 +1,36 @@
+extends  ./../layouts/user.pug
+
+block content
+    body
+        include ../includes/nav.pug
+        if errorMessage.length
+            .error-box.error-box__message #{errorMessage}
+        .middle-column.col-sm-4.u-margin-top-big
+            h1.heading-primary--black.u-align-center  Zarejestruj się
+            hr.form-divider
+            form(action=" " method="POST" novalidate)
+                .form-group
+                    input.form-control(name="email", required="true",  type='email', aria-describedby='emailHelp', placeholder='Email*' value=oldData.email)
+                    if validationError.emailError
+                        small.error-message #{validationError.emailError.msg}
+                .form-group
+                    input.form-control(name="password", required="true",  type='password', placeholder='Haslo*')
+                    if validationError.passwordError
+                        small.error-message #{validationError.passwordError.msg}
+                .form-group
+                    input.form-control(name="name", required="true", type='text', aria-describedby='emailHelp', placeholder='Imię*' value=oldData.name)
+                    if validationError.nameError
+                        small.error-message #{validationError.nameError.msg}
+                .form-group
+                    input.form-control(name="surname", required="true", type='text', aria-describedby='emailHelp', placeholder='Nazwisko*' value=oldData.surname)
+                    if validationError.surnameError
+                        small.error-message #{validationError.surnameError.msg}
+                .form-group
+                    input.form-control(name="phone_number", type='number', aria-describedby='emailHelp', placeholder='Numer telefonu' value=oldData.phone_number)
+                    if validationError.phoneNumberError
+                        small.error-message #{validationError.phoneNumberError.msg}
+                button.btn-submit.btn--primary.u-margin-bottom-small(type='submit') Zarejestruj się
+                hr.form-divider
+                .margin-bottom-sm
+                    | Jeżeli jestes juz zarejestrowany? 
+                    a(href='/login') Zaloguj sie       

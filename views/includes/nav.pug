@@ -1,0 +1,33 @@
+//- nav.navigation.clearfix
+//-   ul.nvigation__menu.clearfix
+//-     li.navigation__menu-item
+//-       a.navigation-btn(href='') Home
+//-     li.navigation__menu-item
+//-       a.navigation-btn(href='') Zaloguj sie
+
+nav.navigation
+    ul.navigation__menu
+        if isAuthenticated
+            span.navigation-user Witaj: #{loggedUserName}
+            li.navigation__menu-item
+                form(action='/logout', method="POST")
+                    button(type="submit" class="navigation-btn") Wyloguj się
+            li.navigation__menu-item
+                a.navigation-btn(href='/myprofile') Moje filmy
+            
+        else
+            li.navigation__menu-item
+                a.navigation-btn(href='/login') Zaloguj się
+        if admin 
+            li.navigation__menu-item
+                a.navigation-btn(href='/api/admin/') Admin Panel
+        li.navigation__menu-item
+             a.navigation-btn(href='/') Home
+        li.navigation__menu-item
+             a.navigation-btn(href='/cart') 
+                | Cart 
+                i(class="fas fa-shopping-cart cart__icon")
+                    if session.cart
+                        span.cart__quantity #{session.cart.totalQty}
+                    else
+                        span.cart__quantity 0

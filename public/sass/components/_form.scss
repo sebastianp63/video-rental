@@ -1,0 +1,70 @@
+.form {
+    &-group {
+        margin-bottom: 2.2rem;
+    }
+
+    &-control {
+        display: block;
+        width: 100%;
+        height: calc(3.6rem + 2px);
+        padding: 0.6rem 1.2rem;
+        font-size: 1.6rem;
+        color: #495057;
+        background-clip: padding-box;
+        background-color: #ddd;
+        border: 1px solid #ced4da;
+        border-radius: 0.4rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        &:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+        }
+    }
+
+    &-divider {
+        margin-bottom: 20px;
+        border-top: 2px solid #ccc
+    }
+
+    &-small {
+        font-weight: 80%;
+        text-align: right;
+        display: block;
+        margin-top: 0.25rem;
+    }
+}
+
+.middle-column {
+    width: 100%;
+    margin: $navbar-height auto;
+    padding: 0 20px;
+
+    @media (min-width: 533px) {
+        width: 80%;
+
+    }
+
+    @media (min-width: 768px) {
+        width: 60%;
+
+    }
+
+    @media (min-width: 1024px) {
+        width: 50%;
+
+    }
+
+    @media (min-width: 1280px) {
+        width: 37%;
+
+    }
+
+    @media (min-width: 1600px) {
+        width: 30%;
+
+    }
+}

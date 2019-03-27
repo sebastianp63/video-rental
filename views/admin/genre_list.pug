@@ -1,0 +1,14 @@
+extends ./../layouts/admin.pug
+
+block content
+    h1=title
+    if genres
+        each genre in genres 
+            .card(style="margin-bottom: 10px")
+                .card-body
+                    h5.card-title Genre: #{genre.name}
+                    a(href=genre.url +"/details" class="btn btn-primary btn-sm") Details 
+                    a(href=genre.url +"/update" class="btn btn-secondary btn-sm") Update
+                    a(href=genre.url +"/delete" class="btn btn-success btn-sm") Delete 
+    else 
+         h1 There are no genre 

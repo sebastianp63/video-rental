@@ -1,0 +1,37 @@
+extends ./../layouts/admin.pug
+
+block content
+    h1=title 
+    form(action=" " method="POST")
+        .form-group
+            label(for="title") Title: 
+            input(id="title" type="text" name="title" required="true"  class="form-control" value=movie?movie.title:'')
+        .form-group
+            label(for="relase_year") Relase year: 
+            input(id="relase_year" type="text" name="relase_year" required="true" class="form-control" value=movie?movie.relase_year:'')
+        .form-group
+            label(for="description") Description: 
+            textarea(id="description" type="text" name="description" required="true" class="form-control" rows="4" value=' ')= movie?movie.description:' '
+        .form-group
+            label(for="duration_time") Duration time: 
+            input(id="duration_time" type="text" name="duration_time" required="true" class="form-control" value=movie?movie.duration_time:'')
+        .form-group
+            label(for="sale_price") Sale price: 
+            input(id="sale_price" name="sale_price" required="true" type="text" class="form-control" value=movie?movie.sale_price:'')
+        .form-group
+            label(for="imageURL") Image URL: 
+            input(id="omageURL" name="imageURL" required="true" type="text" class="form-control" value=movie?movie.imageURL:'')
+        .form-group
+            label Genres: 
+            for genre in genres
+                div(style="display: inline; padding-right: 10px")
+                    input(type="checkbox", name="genres" id=genre._id, value=genre._id, checked=genre.checked)
+                    label(for=genre._id) #{genre.name}
+        .form-group
+            label Language: 
+            <br>
+            each language in languages
+                input(type="checkbox" name="language" id=language.language value=language.language checked=language.checked)
+                label(for=language.language) #{language.language}
+            <br>
+        button(type="submit" class="btn btn-primary") Submit  

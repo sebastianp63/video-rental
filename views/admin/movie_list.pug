@@ -1,0 +1,14 @@
+extends ./../layouts/admin.pug
+
+block content
+    h1=title
+    if movies
+        each movie in movies
+            .card(style="margin-bottom: 10px")
+                .card-body
+                    h5.card-title Movie: #{movie.title}
+                    a(href=movie.url + "/details" class="btn btn-primary btn-sm") Details
+                    a(href=movie.url + "/update" class="btn btn-secondary btn-sm") Update
+                    a(href=movie.url + "/delete" class="btn btn-success btn-sm") Delete
+    else 
+        h1 There are no movies
